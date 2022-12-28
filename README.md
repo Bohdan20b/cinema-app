@@ -11,9 +11,9 @@ It is written with the help of Spring and Hibernate frameworks.
 ###  *Features*
 * Registration, authentication and authorization
 >It is possible to register a new user, log in to an existing account, and operate the service from that account depending on the role given.
-* Scrolling through the information
+* Cinema schedule information
 >The user has the ability to view the available movies, as well as orders. The administrator can also view detailed information about cinema halls and the user database.
-* Information handling
+* Ticket service
 > The user has an opportunity to buy tickets (selectively add it to a shopping cart with further purchase). The administrator is given the opportunity to change the hall information, availability of movies and its sessions.
 
 ### 💾 *Project's structure*
@@ -23,11 +23,14 @@ Based on 3-layer architecture:
 * Application layer - services.
 * Data access layer - DAO.
 
+### *UML diagram of database structure:*
+![UML](src/main/resources/schema.png)
+
 ### 🔨 *Project launch:*
 1. Clone this project to your IDE as Maven project. Hint: If you use IntelliJ IDEA, use only Ultimate version
-2. Open pom.xml and reload all maven projects.
-3. Open db.properties and set your credentials.
-4. Set a new configuration, use Tomcat Local Server and select war-exploded artifact to deploy. Application content parameter should be like this "/".
+2. Open [pom.xml](pom.xml) and reload all maven projects.
+3. Open [db.properties](src/main/resources/db.properties) and set your credentials.
+4. Set a new configuration, use Tomcat Local Server (v.9.0.50) and select war-exploded artifact to deploy. Application content parameter should be like this "/".
 5. Build project. 
 6. You can register a new account or use default ones:
 
