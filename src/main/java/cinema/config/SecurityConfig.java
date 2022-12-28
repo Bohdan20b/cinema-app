@@ -1,5 +1,8 @@
 package cinema.config;
 
+import static cinema.model.Role.RoleName.ADMIN;
+import static cinema.model.Role.RoleName.USER;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -27,22 +30,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .mvcMatchers(HttpMethod.POST, "/register").anonymous()
                 .mvcMatchers(HttpMethod.GET, "/cinema-halls",
                         "/movies", "/movie-sessions/available")
-                .hasAnyRole("USER", "ADMIN")
+                .hasAnyRole(USER.name(), ADMIN.name())
                 .mvcMatchers(HttpMethod.GET, "/users/by-email")
-                .hasRole("ADMIN")
+                .hasRole(ADMIN.name())
                 .mvcMatchers(HttpMethod.POST, "/cinema-halls",
                         "/movies", "/movie-sessions")
-                .hasRole("ADMIN")
+                .hasRole(ADMIN.name())
                 .mvcMatchers(HttpMethod.PUT, "/movie-sessions/**")
-                .hasRole("ADMIN")
+                .hasRole(ADMIN.name())
                 .mvcMatchers(HttpMethod.DELETE, "/movie-sessions/**")
-                .hasRole("ADMIN")
+                .hasRole(ADMIN.name())
                 .mvcMatchers(HttpMethod.GET, "/orders", "/shopping-carts/by-user")
-                .hasRole("USER")
+                .hasRole(USER.name())
                 .mvcMatchers(HttpMethod.POST, "/orders/complete")
-                .hasRole("USER")
+                .hasRole(USER.name())
                 .mvcMatchers(HttpMethod.PUT, "/shopping-carts/movie-sessions")
-                .hasRole("USER")
+                .hasRole(USER.name())
                 .and()
                 .formLogin()
                 .permitAll()
