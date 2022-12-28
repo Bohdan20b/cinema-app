@@ -28,7 +28,17 @@ Based on 3-layer architecture:
 2. Open pom.xml and reload all maven projects.
 3. Open db.properties and set your credentials.
 4. Set a new configuration, use Tomcat Local Server and select war-exploded artifact to deploy. Application content parameter should be like this "/".
-5. Build project.
+5. Build project. 
+6. You can register a new account or use default ones:
+
+<details><summary>Admin</summary>
+<pre>login: admin@i.ua 
+password: admin123</pre>
+</details>
+<details><summary>User</summary>
+<pre>login: user@i.ua 
+password: userPassword</pre>
+</details>
 
 ### 🧰 *Application technologies:*
 * **[JDK 11 or higher](https://www.oracle.com/cis/java/technologies/javase/jdk11-archive-downloads.html)**
