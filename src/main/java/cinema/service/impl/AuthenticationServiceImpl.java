@@ -1,5 +1,7 @@
 package cinema.service.impl;
 
+import static cinema.model.Role.RoleName.USER;
+
 import cinema.model.Role;
 import cinema.model.User;
 import cinema.service.AuthenticationService;
@@ -11,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AuthenticationServiceImpl implements AuthenticationService {
-    private static final Role.RoleName DEFAULT_ROLE = Role.RoleName.USER;
+    private static final Role.RoleName DEFAULT_ROLE = USER;
     private final RoleService roleService;
     private final UserService userService;
     private final ShoppingCartService shoppingCartService;
